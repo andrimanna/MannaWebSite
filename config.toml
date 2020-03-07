@@ -17,7 +17,7 @@ name = "Andrea Mannarella"
   dateform        = "2 Jan 2006"
   dateformShort   = "2 Jan"
   dateformNum     = "02/01/2006"
-  dateformNumTime = "02/01/2006 15:04 -0700"
+  dateformNumTime = "02/01/2006 15:04"
   disableReadOtherPosts = false
   justifyContent = true
   contentTypeName = "posts"
@@ -44,23 +44,24 @@ name = "Andrea Mannarella"
     identifier = "blog"
     name       = "Blog"
     url        = "/posts"
-
-[[params.social]]
-  name = "twitter"
-  url  = "https://twitter.com/"
-
-[[params.social]]
-  name = "email"
-  url  = "mailto:nobody@example.com"
+    
+  [[menu.main]]
+    identifier = "about"
+    name       = "About"
+    url        = "about/"
 
 [[params.social]]
   name = "github"
-  url  = "https://github.com/"
+  url  = "https://github.com/andrimanna"
 
 [[params.social]]
   name = "linkedin"
-  url  = "https://www.linkedin.com/"
+  url  = "https://www.linkedin.com/in/mannarellandrea/"
 
 [[params.social]]
-  name = "stackoverflow"
-  url  = "https://www.stackoverflow.com/"
+  name = "telegram"
+  url  = "https://telegram.me/andrimanna"
+
+[[params.social]]
+  name = "youtube"
+  url  = "https://www.youtube.com/channel/UCOqjw1xz1k1Dc9I3S8xl4kg"

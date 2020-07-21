@@ -7,61 +7,67 @@ copyright = '<a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_
 enableRobotsTXT = true
 enableGitInfo   = false
 enableEmoji     = true
-title = "MannaWebSite"
-keywords = "portfolio mannarella"
+title = "Andrea Mannarella"
+keywords = "sito mannarella"
 
 [author]
 name = "Andrea Mannarella"
 
 [params]
-  dateform        = "2 Jan 2006"
-  dateformShort   = "2 Jan"
-  dateformNum     = "02/01/2006"
-  dateformNumTime = "02/01/2006 15:04"
-  disableReadOtherPosts = false
-  justifyContent = true
-  contentTypeName = "posts"
-  defaultTheme = "dark"
+dateform        = "2 Jan 2006"
+dateformShort   = "2 Jan"
+dateformNum     = "02/01/2006"
+dateformNumTime = "02/01/2006 15:04"
+disableReadOtherPosts = false
+justifyContent = true
+contentTypeName = "posts"
+defaultTheme = "dark"
 
 [params.logo]
-   logoText     = "$ cd /home/"
-   logoHomeLink = "/"
+logoText     = "$ cd /home/"
+logoHomeLink = "/"
 
 
 [languages]
-  [languages.en]
-    subtitle = "Andrea Mannarella's portfolio"
+[languages.en]
+    subtitle = "'s website"
     readOtherPosts = "Read other posts"
-    weight    = 2
-    
-  [languages.it]
-    subtitle = "Portfolio di Andrea Mannarella"
-    readOtherPosts = "Leggi altri post"
     weight    = 1
-    
-[menu]
-  [[menu.main]]
-    identifier = "blog"
-    name       = "Blog"
-    url        = "/posts"
-    
-  [[menu.main]]
+    languageName = "English"
+
+    [[languages.en.menu.main]]
     identifier = "about"
     name       = "About"
     url        = "about/"
 
+    [languages.it]
+    subtitle = "Sito web di"
+    readOtherPosts = "Leggi altri post"
+    about = "Su di me"
+    weight    = 0
+    
+    [[languages.it.menu.main]]
+    identifier = "blog"
+    name       = "Blog"
+    url        = "/posts"
+    
+    [[languages.it.menu.main]]
+    identifier = "about"
+    name       = "Su di me"
+    url        = "about/"
+    
 [[params.social]]
-  name = "github"
-  url  = "https://github.com/andrimanna"
+name = "github"
+url  = "https://github.com/andrimanna"
 
 [[params.social]]
-  name = "linkedin"
-  url  = "https://www.linkedin.com/in/mannarellandrea/"
+name = "linkedin"
+url  = "https://www.linkedin.com/in/mannarellandrea/"
 
 [[params.social]]
-  name = "telegram"
-  url  = "https://telegram.me/andrimanna"
+name = "telegram"
+url  = "https://telegram.me/andrimanna"
 
 [[params.social]]
-  name = "youtube"
-  url  = "https://www.youtube.com/channel/UCOqjw1xz1k1Dc9I3S8xl4kg"
+name = "youtube"
+url  = "https://www.youtube.com/channel/UCOqjw1xz1k1Dc9I3S8xl4kg"

@@ -5,10 +5,8 @@ DefaultContentLanguage = "it"
 rssLimit  = 10
 copyright = '<a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a>'
 enableRobotsTXT = true
-enableGitInfo   = false
+enableGitInfo   = true
 enableEmoji     = true
-title = "MannaWebSite"
-keywords = "portfolio mannarella"
 
 [author]
 name = "Andrea Mannarella"
@@ -30,24 +28,23 @@ name = "Andrea Mannarella"
 
 [languages]
   [languages.en]
-    subtitle = "Andrea Mannarella's portfolio"
+    title = "Did you try turning it off and on again?"
     readOtherPosts = "Read other posts"
-    weight    = 2
+    weight = 2
     
   [languages.it]
-    subtitle = "Portfolio di Andrea Mannarella"
+    title = "Hai provato a spegnere e riaccendere?"
     readOtherPosts = "Leggi altri post"
     weight    = 1
     
 [menu]
   [[menu.main]]
-    identifier = "blog"
-    name       = "Blog"
+    name       = "blog"
     url        = "/posts"
     
   [[menu.main]]
     identifier = "about"
-    name       = "About"
+    name       = "whoami"
     url        = "about/"
 
 [[params.social]]

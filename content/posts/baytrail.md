@@ -22,28 +22,27 @@ Il computer montava Windows 8.1 32 bit al rilascio, poi aggiornato a 10 ma non h
 
 Per non parlare della memoria di massa: praticamente una scheda SD saldata con limitate capacità di storage e velocità, rendono l'utilizzo del dispositivo quasi snervante, considerando anche i soli 2 GB di RAM che contringono l'OS a swappare (o meglio *usare il file di paging* per dirlo alla Windows) tutti i tab di Chrome dopo il primo e la *telemetria* di Windows che ci mette del suo per ucciderlo del tutto.
 
-L'unico modo per renderlo utilizzabile oggigiorno è quello di purgare Windows e installarci una bella e moderna distro  GNU/Linux, ma la questione è più complicata del previsto perché quella diavoleria del bootloader UEFI è a 32 bit e sembra che abbiano volutamente reso complicato la vita a chiunque cerchi di far partire un SO diverso da quello preinstallato. Ma non temete, abbiamo bisogno solo di una chiavetta USB da almeno 2 GB e una notte in bianco (quale momento migliore sennò).
+L'unico modo per renderlo utilizzabile oggigiorno è quello di purgare Windows e installarci una bella e moderna distro  GNU/Linux, ma la questione è più complicata del previsto perché quella diavoleria del bootloader UEFI è a 32 bit e sembra che abbiano volutamente reso complicato la vita a chiunque cerchi di far partire un SO diverso da quello preinstallato.
 
 Come distro ho scelto Linux Mint XFCE per la leggerezza dell'ambiente grafico e per l'ampio sofware già installato e configutato, ma il procedimento dovrebbe essere il medesimo per qualsiasi distro scegliate e per il modello di tablet Bay Trail che avete, magari con delle differenze nelle impostazioni del BIOS.
 
-### Prima di tutto
+## Preparazione
 
+- Abbiamo bisogno di una chiavetta USB da almeno 2 GB e una notte in bianco (quale momento migliore sennò).
 - Vi consiglio di leggere tutta la guida prima di fare qualsiasi cosa, per avere le idee chiare su ogni passaggio.
-
 - Ovviamente fate un backup dei file che vi servono, anche sulla scheda micro-SD.
-
 - Siccome molto probabilmente questo computer non vedrà più Windows, è conveniente aggiornare il BIOS all'ultima versione prima di iniziare. Nel mio caso montavo la V1.18 mentre l'ultima è la V1.20 scaricabile dal [sito Acer](https://global-download.acer.com/GDFiles/BIOS/BIOS/BIOS_Acer_1.20_A_A.zip?acerid=635943075181893127&Step1=NOTEBOOK&Step2=ASPIRE%20SWITCH&Step3=SW5-012&OS=10M2&LC=it&BC=ACER&SC=EMEA_17).
 
 Ora possiamo iniziare!
 
-## Preparazione della chiavetta
+### Chiavetta
 
 1.  Direttamente dal tablet con Windows scarichiamo l'[ISO della distro](https://linuxmint.com/download.php) e [Rufus](https://rufus.ie).
 2. Una volta terminato inserite la chiavetta (salvatevi i file che avete sopra magari), aprite Rufus, selezionate l'unità corretta, l'immgine scaricata, schema partizione **GPT**, sistema destinazione **UEFI** e file system **FAT32** e infine AVVIA. Questa operazione è necessaria farla in questo modo perché dobbiamo poter inserire un file dopo la copia. Con dd o balenaEtcher dopo aver copiato l'immagine non è possibile scrivere più nulla nella chiavetta.[^3]
 3. Nel frattempo scaricate il file [bootia32.efi](https://github.com/hirotakaster/baytail-bootia32.efi/raw/master/bootia32.efi) e schiaffatelo in `/EFI/BOOT/bootia32.efi` quando Rufus avrà terminato.
 4. Dite addio a Windows e spegnete.
 
-## Preparazione del boot
+### Boot
 
 1. Accendetelo premendo **F2** per entrare nelle impostazioni del BIOS.
 2. Nella sezione *Security* impostate una password nella sezione *Supervisor Password*.
@@ -70,7 +69,7 @@ Ora possiamo iniziare!
 
 4. Proseguite e, una volta terminato il processo, spegnete il PC.
 
-## GRUB
+### Grub
 
 Non essendo ancora installato alcun bootloader dobbiamo appogiarci ancora a quello della chiavetta, pertanto rifacciamo partire da lì, ma dal menù di GRUB aprite la linea di comando premendo *c* sulla tastiera.
 
@@ -101,7 +100,7 @@ sudo update-grub
 Giusto per scrupolo potete vedere con `efibootmgr` se compare l'entry all'interno della lista di boot.
 6. A questo punto spegnete il computer e togliete la chiavetta.
 
-## Secure Boot
+### Secure Boot
 
 1. Riaccendetelo e entrate ancora nei settaggi del BIOS.
 2. Inserite la password, andate su *Boot* e riattivate il *Secure Boot*.

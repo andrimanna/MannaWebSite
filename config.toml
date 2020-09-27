@@ -12,18 +12,18 @@ enableEmoji     = true
 name = "Andrea Mannarella"
 
 [params]
-  dateform        = "2 Jan 2006"
-  dateformShort   = "2 Jan"
-  dateformNum     = "02/01/2006"
-  dateformNumTime = "02/01/2006 15:04"
-  disableReadOtherPosts = false
-  justifyContent = true
-  contentTypeName = "posts"
-  defaultTheme = "dark"
+dateform        = "2 Jan 2006"
+dateformShort   = "2 Jan"
+dateformNum     = "02/01/2006"
+dateformNumTime = "02/01/2006 15:04"
+disableReadOtherPosts = false
+justifyContent = true
+contentTypeName = "posts"
+defaultTheme = "dark"
 
 [params.logo]
-   logoText     = "$ cd /home/"
-   logoHomeLink = "/"
+logoText     = "$ cd /home/"
+logoHomeLink = "/"
 
 
 [languages]
@@ -36,6 +36,7 @@ name = "Andrea Mannarella"
     title = "Hai provato a spegnere e riaccendere?"
     readOtherPosts = "Leggi altri post"
     weight    = 1
+    languageName = "English"
     
 [menu]
   [[menu.main]]
@@ -43,22 +44,21 @@ name = "Andrea Mannarella"
     url        = "/posts"
     
   [[menu.main]]
-    identifier = "about"
     name       = "whoami"
     url        = "about/"
+    
+[[params.social]]
+name = "github"
+url  = "https://github.com/andrimanna"
 
 [[params.social]]
-  name = "github"
-  url  = "https://github.com/andrimanna"
+name = "linkedin"
+url  = "https://www.linkedin.com/in/mannarellandrea/"
 
 [[params.social]]
-  name = "linkedin"
-  url  = "https://www.linkedin.com/in/mannarellandrea/"
+name = "telegram"
+url  = "https://telegram.me/andrimanna"
 
 [[params.social]]
-  name = "telegram"
-  url  = "https://telegram.me/andrimanna"
-
-[[params.social]]
-  name = "youtube"
-  url  = "https://www.youtube.com/channel/UCOqjw1xz1k1Dc9I3S8xl4kg"
+name = "youtube"
+url  = "https://www.youtube.com/channel/UCOqjw1xz1k1Dc9I3S8xl4kg"

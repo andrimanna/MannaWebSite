@@ -2,8 +2,7 @@
 title: "GNU/Linux su un tablet 2-in-1 con Atom Bay Trail"
 date: 2020-09-27T11:33:04+02:00
 draft: false
-toc: true
-images:
+toc: false
 tags:
   - linux
 ---
@@ -53,7 +52,6 @@ Ora possiamo iniziare!
 ## Installazione
 
 1. Al riavvio partirà la live di Mint, non avviate subito l'installazione ma aprite un terminale e eseguite  `ubiquity --no-bootloader`. Installeremo GRUB in seguito.
-
 2. Proseguite come di consueto nell'installazione ma al momento del partizionamento dei dischi scegliete la via manuale e replicate il seguente schema:
 
 | Partizione | File system | Punto di montaggio | Dimensione |
@@ -63,10 +61,9 @@ Ora possiamo iniziare!
 | mmcblk1p3  | ext4        | /                  | il resto   |
 | mmcblk1p4  | swap        |                    | 4GB        |
 
-~~Se avete una scheda micro-SD e la volete usare come storage per la cartella `/home`, questo è il momento adatto per impostarla.~~ No perché la scheda micro-SD funziona in sola lettura.
+~~Se avete una scheda micro-SD e la volete usare come storage per la cartella `/home`, questo è il momento adatto per impostarla.~~ No perché la scheda micro-SD funziona in sola lettura per ora.
 
 3. Prendete nota della partizione di root, ci servirà in seguito.
-
 4. Proseguite e, una volta terminato il processo, spegnete il PC.
 
 ### Grub
@@ -136,7 +133,7 @@ Sfortunatamente alcuni dispositivi non funzionano ma potrebbero uscire patch per
 
 ### Audio
 
-L'audio funziona solo dalle cuffie ma è semplice risolvere:
+Se l'audio funziona solo dalle cuffie, è semplice risolvere:
 ```bash
 git clone https://github.com/plbossart/UCM.git
 sudo cp -rf UCM/bytcr-rt5640 /usr/share/alsa/ucm
@@ -149,15 +146,23 @@ reboot
 
 Essendo un tablet, è ragionevole poterlo usare senza tastiera, per farlo basta attivare Onboard (già preinstallato), anche nella schermata di login.
 
+### Scroll su Firefox
+
+Il touchscreen funziona perfettamente, anche con più dita, ma Firefox va abilitato ad utilizzarlo per poter scorrere le pagine. Per farlo bisogna aggiungere `MOZ_USE_XINPUT2 DEFAULT=1` nel file `/etc/security/pam_env.conf` e andare su `about:config` da Firefox e settare `dom.w3c_touch_events.enabled` su `1` (default `2`). Riavviate il tablet per vedere i risultati.
+
 ### Errore durante update-initramfs
 
 Se durante un `full-upgrade` dovesse fallire `update-initramfs`, basta eliminare un kernel vecchio dopo il riavvio. Vedete quale è di troppo con `dpkg --list | grep linux-image` e purgatelo.
+
+### Regolazione luminosità schermo
+
+Pare che nel kernel 5.6 il bug sia sistemato, quindi avete tre possibilità: aspettate che Ubuntu lo distribuisca, lo installate manualmente o usate una distro che già lo usa. Per ora è fissa al massimo con conseguente calo della durata della batteria aggravata dall'impossibilità della sospensione.
 
 ## Conclusioni
 
 Peccato per i dispositivi che non vengono riconosciuti, soprattutto la webcam in questo periodo di smart working e DaD, ma confido che qualche utente su qualche blog o forum abbia già trovato una soluzione. Nel caso editerò questo articolo.
 
-Per il resto il computer si comporta molto bene, in rapporto al suo hardware. La navigazione con Firefox e l'utilizzo office sono soddisfacenti. Addirittura giochi 3D come SuperTuxKart[^2], ovviamente con i settaggi al minimo, riescono a girare dignitosamente, al contrario di Windows a 32 bit.
+Per il resto il computer si comporta molto bene, in rapporto al suo hardware. La navigazione con Firefox e l'utilizzo office sono soddisfacenti con [uBlock Origin](https://addons.mozilla.org/it/firefox/addon/ublock-origin/). La riproduzione di video su Youtube è fluida, fino al 1080p. Addirittura giochi 3D come SuperTuxKart[^2], ovviamente con i settaggi al minimo, riescono a girare dignitosamente, al contrario di Windows.
 
 ### Note
 

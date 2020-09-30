@@ -1,8 +1,9 @@
 baseurl = "https://mannarella.it"
-languageCode = "it"
+languageCode = "it-It"
 theme = "hello-friend-ng"
 DefaultContentLanguage = "it"
-rssLimit  = 10
+rssLimit  = 30
+paginate = "25"
 copyright = '<a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a>'
 enableRobotsTXT = true
 enableEmoji     = true
@@ -19,11 +20,10 @@ disableReadOtherPosts = false
 justifyContent = true
 contentTypeName = "posts"
 defaultTheme = "dark"
-
+   
 [params.logo]
 logoText     = "$ cd /home/"
 logoHomeLink = "/"
-
 
 [languages]
   [languages.en]

@@ -61,7 +61,7 @@ Ora possiamo iniziare!
 | mmcblk1p3  | ext4        | /                  | il resto   |
 | mmcblk1p4  | swap        |                    | 4GB        |
 
-~~Se avete una scheda micro-SD e la volete usare come storage per la cartella `/home`, questo è il momento adatto per impostarla.~~ No perché la scheda micro-SD funziona in sola lettura per ora.
+~~Se avete una scheda micro-SD e la volete usare come storage per la cartella `/home`, questo è il momento adatto per impostarla.~~ No perché la scheda micro-SD funziona in sola lettura, per ora.
 
 3. Prendete nota della partizione di root, ci servirà in seguito.
 4. Proseguite e, una volta terminato il processo, spegnete il PC.
@@ -82,7 +82,7 @@ linux /vmlinuz root=/dev/mmcblk1p3
 initrd /initrd.img
 boot
 ```
-Se tutto fila liscio, vi ritroverete nell'ambiente installato precedentemente.
+Se tutto fila liscio, vi ritroverete nell'ambiente installato precedentemente.[^4]
 
 3. Aprite un terminale e installate `grub-efi-ia32 grub-efi-ia32-bin` nel mio caso da `apt`, essendo su Mint.
 4. Installiamo finalmente GRUB con:
@@ -167,5 +167,9 @@ Per il resto il computer si comporta molto bene, in rapporto al suo hardware. La
 ### Note
 
 [^1]: https://tech.everyeye.it/amp/notizie/pubblicato-4chan-codice-sorgente-windows-xp-non-buona-notizia-470759.html
+
 [^2]: Mi raccomando installate la versione >=1.2 per avere il supporto completo al touchscreen e ai controller. Su Debian e derivate basta aggiungere il repository `ppa:stk/dev`
+
 [^3]:Curioso che uno dei miei sofware preferiti su Windows sia proprio uno che serve a toglierlo. [semicit. Mike Party]
+
+[^4]: Probabilemte è possibile installare Grub anche in chroot o direttamente dall'ambiente live usando anche il paramentro `--boot-directory=/mnt/boot`, ma con me non ha funzionato.

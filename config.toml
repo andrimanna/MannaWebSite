@@ -28,7 +28,7 @@ logoHomeLink = "/"
 [languages]
   [languages.en]
     title = "Did you try turning it off and on again?"
-    homeSubtitle = "Tecnology, random stuff..."
+    homeSubtitle = "Talking about tecnology, random stuff..."
     languageName = "English"
     readOtherPosts = "Read other posts"
     weight = 0
@@ -46,9 +46,9 @@ logoHomeLink = "/"
     
   [languages.it]
     title = "Hai provato a spegnere e riaccendere?"
-    homeSubtitle = "Tecnologia, cose a caso..."
+    homeSubtitle = "Parlo di tecnologia, cose a caso..."
     languageName = "Italiano"
-    readOtherPosts = "Leggi altri post"
+    readOtherPosts = "Leggi altri articoli"
     weight    = -100
     [languages.it.menu]
   	[[languages.it.menu.main]]

@@ -84,5 +84,5 @@ name = "email"
 url  = "mailto:andrea@mannarella.it"
 
 [[params.social]]
-name = "twitter"
-url  = "https://twitter.com/MannarellAndrea"
+name = "mastodon"
+url  = "https://livellosegreto.it/@andrimanna"
